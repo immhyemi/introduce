@@ -1,450 +1,453 @@
 :root {
-    --primary: #2563eb;
-    --primary-soft: #ebf1ff;
-    --bg: #f5f7fb;
-    --card-bg: #ffffff;
-    --text-main: #111827;
-    --text-sub: #6b7280;
-    --border-subtle: rgba(15, 23, 42, 0.06);
-    --radius-lg: 24px;
-    --shadow-soft: 0 18px 70px rgba(15, 23, 42, 0.06);
-    --transition-fast: 0.2s ease;
-    --max-width: 1080px;
+  --primary: #2563eb;
+  --primary-soft: #ebf1ff;
+  --bg: #f5f7fb;
+  --card-bg: #ffffff;
+  --text-main: #111827;
+  --text-sub: #6b7280;
+  --border-subtle: rgba(15, 23, 42, 0.06);
+  --radius-lg: 24px;
+  --shadow-soft: 0 18px 70px rgba(15, 23, 42, 0.06);
+  --transition-fast: 0.2s ease;
+  --max-width: 1080px;
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background-color: var(--bg);
-    color: var(--text-main);
-    line-height: 1.6;
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background-color: var(--bg);
+  color: var(--text-main);
+  line-height: 1.6;
 }
 
 a {
-    color: var(--primary);
-    text-decoration: none;
+  color: var(--primary);
+  text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 main {
-    padding-top: 80px;
+  padding-top: 80px;
 }
 
 /* 네이게이션 */
 
 .nav {
-    position: fixed;
-    inset: 0 0 auto 0;
-    height: 56px;
-    background-color: #ffffffcc;
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
-    z-index: 100;
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 56px;
+  background-color: #ffffffcc;
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+  z-index: 100;
 }
 
 .nav-inner {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 24px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
 }
 
 .nav-logo {
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--primary);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--primary);
 }
 
 .nav-menu {
-    list-style: none;
-    display: flex;
-    gap: 32px;
-    margin: 0;
-    padding: 0;
-    font-size: 13px;
-    color: #6b7280;
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  color: #6b7280;
 }
 
 .nav-menu a {
-    position: relative;
-    padding-bottom: 2px;
-    transition: color var(--transition-fast);
+  position: relative;
+  padding-bottom: 2px;
+  transition: color var(--transition-fast);
 }
 
 .nav-menu a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    border-radius: 999px;
-    background: var(--primary);
-    transition: width var(--transition-fast);
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--primary);
+  transition: width var(--transition-fast);
 }
 
 .nav-menu a:hover {
-    color: var(--primary);
+  color: var(--primary);
 }
 
 .nav-menu a:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 /* 공통 섹션 */
 
 .section-wrapper,
 .intro-wrapper {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 64px 24px 40px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 64px 24px 40px;
 }
 
 .section-title {
-    margin: 6px 0 32px;
-    font-size: 26px;
-    font-weight: 600;
-    letter-spacing: -0.03em;
+  margin: 6px 0 32px;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
 }
 
 .label {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--primary);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--primary);
 }
 
 /*인트로*/
 .intro-wrapper {
-    padding-top: 72px;
+  padding-top: 72px;
 }
 
 .intro-card {
-    display: grid;
-    grid-template-columns: minmax(240px, 280px) minmax(0, 1fr);
-    gap: 56px;
-    background-color: var(--card-bg);
-    border-radius: var(--radius-lg);
-    padding: 32px 40px;
-    box-shadow: var(--shadow-soft);
-    border: 1px solid rgba(37, 99, 235, 0.12);
+  display: grid;
+  grid-template-columns: minmax(240px, 280px) minmax(0, 1fr);
+  gap: 56px;
+  background-color: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 32px 40px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(37, 99, 235, 0.12);
 }
 
 .intro-left {
-    border-right: 1px solid var(--border-subtle);
-    padding-right: 32px;
+  border-right: 1px solid var(--border-subtle);
+  padding-right: 32px;
 }
 
 .section-small-title {
-    margin: 0 0 18px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #4b5563;
+  margin: 0 0 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #4b5563;
 }
 
 .profile-img-box {
-    width: 160px;
-    height: 180px;
-    border-radius: 20px;
-    background: radial-gradient(circle at 0% 0%, #bfdbfe, #dbeafe);
-    border: 1px solid rgba(148, 163, 184, 0.3);
-    margin-bottom: 18px;
+  width: 160px;
+  height: 180px;
+  border-radius: 20px;
+  background: radial-gradient(circle at 0% 0%, #bfdbfe, #dbeafe);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  margin-bottom: 18px;
 }
 
 .name {
-    margin: 0;
-    font-weight: 600;
-    font-size: 18px;
+  margin: 0;
+  font-weight: 600;
+  font-size: 18px;
 }
 
 .role {
-    margin: 2px 0;
-    font-size: 13px;
-    color: var(--text-sub);
+  margin: 2px 0;
+  font-size: 13px;
+  color: var(--text-sub);
 }
 
 .birth {
-    margin: 0 0 18px;
-    font-size: 12px;
-    color: #9ca3af;
+  margin: 0 0 18px;
+  font-size: 12px;
+  color: #9ca3af;
 }
 
 .subtitle {
-    margin: 8px 0 4px;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: #9ca3af;
+  margin: 8px 0 4px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #9ca3af;
 }
 
 .intro-edu p {
-    margin: 0;
-    font-size: 13px;
-    color: #4b5563;
+  margin: 0;
+  font-size: 13px;
+  color: #4b5563;
 }
 
-.intro-right {
-    font-size: 14px;
-    color: #4b5563;
+.footer {
+  text-align: center;
+  font-size: 14px;
+  color: #4b5563;
 }
 
 .intro-right p {
-    margin: 0 0 8px;
+  margin: 0 0 8px;
 }
 
 .contact-title {
-    margin-top: 20px;
-    margin-bottom: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #111827;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
 }
 
 /* 스킬 */
 
 .skills-card {
-    background-color: var(--card-bg);
-    border-radius: var(--radius-lg);
-    padding: 28px 32px 30px;
-    box-shadow: var(--shadow-soft);
-    border: 1px solid var(--border-subtle);
+  background-color: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px 30px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-subtle);
 }
 
 .skills-grid {
-    margin-top: 12px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .skills-grid span {
-    font-size: 12px;
-    padding: 6px 14px;
-    border-radius: 999px;
-    background: var(--primary-soft);
-    color: var(--primary);
-    border: 1px solid rgba(37, 99, 235, 0.18);
-    white-space: nowrap;
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  white-space: nowrap;
 }
 
 /* 작업 */
 
 .projects-wrapper {
-    padding-top: 40px;
+  padding-top: 40px;
 }
 
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
 }
 
 .project-card {
-    background-color: var(--card-bg);
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--border-subtle);
-    box-shadow: var(--shadow-soft);
-    overflow: hidden;
-    transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
-    display: flex;
-    flex-direction: column;
+  background-color: var(--card-bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  transition: transform var(--transition-fast),
+    box-shadow var(--transition-fast), border-color var(--transition-fast);
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 26px 80px rgba(37, 99, 235, 0.18);
-    border-color: rgba(37, 99, 235, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 26px 80px rgba(37, 99, 235, 0.18);
+  border-color: rgba(37, 99, 235, 0.5);
 }
 
 .thumbnail {
-    height: 200px;
-    background: radial-gradient(circle at 0 0, #bfdbfe, #eff6ff);
+  height: 200px;
+  background: radial-gradient(circle at 0 0, #bfdbfe, #eff6ff);
 }
 
 .project-card .sub {
-    margin: 16px 20px 4px;
-    font-size: 11px;
-    color: var(--primary);
+  margin: 16px 20px 4px;
+  font-size: 11px;
+  color: var(--primary);
 }
 
 .project-card h3 {
-    margin: 0 20px 6px;
-    font-size: 16px;
-    font-weight: 600;
+  margin: 0 20px 6px;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .project-desc {
-    margin: 0 20px 14px;
-    font-size: 13px;
-    color: #6b7280;
+  margin: 0 20px 14px;
+  font-size: 13px;
+  color: #6b7280;
 }
 
 .tag-box {
-    margin: auto 20px 16px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+  margin: auto 20px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .tag-box span {
-    font-size: 11px;
-    padding: 5px 12px;
-    border-radius: 999px;
-    background-color: var(--primary-soft);
-    color: var(--primary);
+  font-size: 11px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background-color: var(--primary-soft);
+  color: var(--primary);
 }
 
 /* 작업 */
 
 .activities-wrapper {
-    padding-top: 48px;
+  padding-top: 48px;
 }
 
 .activities-card {
-    margin-top: 8px;
-    background-color: var(--card-bg);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-soft);
-    border: 1px solid var(--border-subtle);
-    overflow: hidden;
+  margin-top: 8px;
+  background-color: var(--card-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
 }
 
 .activity-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 24px;
-    font-size: 14px;
-    color: #4b5563;
-    border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  font-size: 14px;
+  color: #4b5563;
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .activity-item:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .activity-title {
-    flex: 1;
+  flex: 1;
 }
 
 .activity-item .date {
-    font-size: 13px;
-    color: #9ca3af;
+  font-size: 13px;
+  color: #9ca3af;
 }
 
 /* 수상 */
 
 .awards-wrapper {
-    padding-top: 48px;
-    padding-bottom: 40px;
+  padding-top: 48px;
+  padding-bottom: 40px;
 }
 
 .award-card {
-    margin-top: 10px;
-    background-color: var(--card-bg);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-soft);
-    border: 1px solid var(--border-subtle);
-    padding: 22px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  margin-top: 10px;
+  background-color: var(--card-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-subtle);
+  padding: 22px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .award-title {
-    margin: 0 0 4px;
-    font-size: 15px;
-    font-weight: 600;
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 .award-sub {
-    margin: 0 0 4px;
-    font-size: 13px;
-    color: #4b5563;
+  margin: 0 0 4px;
+  font-size: 13px;
+  color: #4b5563;
 }
 
 .award-date {
-    margin: 0;
-    font-size: 12px;
-    color: #9ca3af;
+  margin: 0;
+  font-size: 12px;
+  color: #9ca3af;
 }
 
 .award-icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 999px;
-    background: var(--primary-soft);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .award-icon img {
-    width: 26px;
-    height: 26px;
-    object-fit: contain;
-    display: block;
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  display: block;
 }
 
 @media (max-width: 900px) {
-    .intro-card {
-        grid-template-columns: 1fr;
-        gap: 32px;
-    }
-    .intro-left {
-        border-right: none;
-        border-bottom: 1px solid var(--border-subtle);
-        padding-right: 0;
-        padding-bottom: 20px;
-    }
-    .projects-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+  .intro-card {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .intro-left {
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-right: 0;
+    padding-bottom: 20px;
+  }
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 640px) {
-    .nav-inner {
-        justify-content: space-between;
-    }
+  .nav-inner {
+    justify-content: space-between;
+  }
 
-    .nav-menu {
-        display: none;
-    }
+  .nav-menu {
+    display: none;
+  }
 
-    .section-wrapper,
-    .intro-wrapper {
-        padding-inline: 18px;
-    }
+  .section-wrapper,
+  .intro-wrapper {
+    padding-inline: 18px;
+  }
 
-    .intro-card,
-    .skills-card,
-    .activities-card,
-    .award-card {
-        padding-inline: 20px;
-    }
+  .intro-card,
+  .skills-card,
+  .activities-card,
+  .award-card {
+    padding-inline: 20px;
+  }
 
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
 
-    .profile-img-box {
-        width: 140px;
-        height: 160px;
-    }
+  .profile-img-box {
+    width: 140px;
+    height: 160px;
+  }
 }
